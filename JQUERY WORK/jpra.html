@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<style type="text/css">
+	#dvSecond{
+	 /* position:relative;
+	left:200px; istrah beh kr saktay hain */
+	position:relative;
+	left:800px;
+	transform:scale(2,2);
+	top:100px;
+	
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+	$("#dvFirst").mouseover(function (){
+	var dvFirstHTML = $("#dvFirst").html();
+	$("#dvSecond").html(dvFirstHTML);
+	});
+	$("#dvFirst").mouseout(function (){
+	$("#dvSecond").html("");
+	});
+});
+</script>
+</head>
+<body>
+	<div id="dvFirst">
+	<img src="pic.jpeg" style="height:150px;"/>
+</div>
+<div id="dvSecond">
+	
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.6.0.js"></script>
+
+    <script type="text/javascript">
+	 $(document).ready(function () {
+          /*  $("td").mouseover(function () {    
+                $(this).css("background-color","red");
+            });
+	$("td").mouseout(function () {    
+                $(this).css("background-color","white");
+            }); */
+	 $("#btnRegister").click(function(){
+	  if ($("#txtName").val() == "")
+	    $("#NameVal").show("slow");
+	else 
+	    $("#NameVal").hide("slow");
+	}); 
+	$("#btnRegister").click(function(){
+	  if ($("#butt").val() == "")
+	    $("#PassVal").show("slow");
+	else 
+	    $("#PassVal").hide("slow");
+	});
+	$("#btnRegister").click(function(){
+	  if ($("#rd").val() == "")
+	    $("#Gen").show("slow");
+	else 
+	    $("#Gen").hide("slow");
+	});
+	/* $("input").focus(function () {
+	 $(input).css("background-color","red"); 
+	$(this).css("background-color","red");
+	}); */
+	$("input,select,textarea").focus(function () {
+	$(this).css("background-color","red");
+	$(this).css("color","green");
+	/* $(this).parent().css("background-color","red"); */
+	 /* $(this).parent().parent().css("background-color","lightblue"); */
+	$(this).parent().parent().children().css("font-weight","bold");
+	});
+	$("input,select,textarea").blur(function () {
+	$(this).css("background-color","red");
+	$(this).css("color","green");
+	/* $(this).parent().css("background-color","red"); */
+	/* $(this).parent().parent().css("background-color","lightblue"); */
+	$(this).parent().parent().children().css("font-weight","bold");
+	if ($(this).val() == "")
+		 $(this).parent().find("div").show("slow"); 
+		
+	else
+		$(this).parent().find("div").show("slow");
+		
+	});
+	});
+	$("form").validate({
+    rules: {
+        SelectName: { valueNotEquals: "0" }
+    },
+    messages: {
+        SelectName: { valueNotEquals: "Please select an item!" }
+    }  
+	});
+        </script>
+</head>
+<body>
+	
+	<form ="HTML Practice"  method="get"/>
+    <table width="100%" border="1" cellpadding="5">
+        <tr>
+            <td>
+                Please Enter Your Name
+            </td>
+            <td>
+            <input type="text" id="txtName"/>
+	    <div id="NameVal" style="color:black;display:none;">Enter Your Name</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Please Enter Your Password
+            </td>
+            <td>
+            <input type="button" id="butt"/>
+	    <div id="PassVal" style="color:black;display:none;">Enter Your Password</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Please Select Your Gender
+            </td>
+            <td>
+                <input type="radio" name="gen" id="rd"/>Male
+                <input type="radio" name="gen" id="rd"/>Female
+	<div id="Gen" style="color:black;display:none;">Enter Your Gender</div>
+            </td>
+        </tr>
+	<tr>
+            <td>
+                Please Select Your Courses
+            </td>
+            <td>
+                <input type="checkbox" name="crs" id="ck"/>Math
+                <input type="checkbox" name="crs" id="ck"/>AI
+		<input type="checkbox" name="crs" id="ck"/>Advance Math
+	<div id="chek" style="color:black;display:none;">
+   	
+ 	</div>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Select Your Country
+            </td>
+            <td>
+		<select>
+                <option>Pakistan id="sl"</option>
+                <option>Afghanistan id="sl"</option>
+		<option>Uzbakistan id="sl"</option>
+                <option>Turkmanistan id="sl"</option>
+		</select>
+		<div id="sel" style="color:black;display:none;">
+	</div>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Select Your DOB
+            </td>
+            <td>
+		<input type="date"/>
+            </td>
+        </tr>
+	<tr>
+            <td>
+                Please Select Your Month
+            </td>
+            <td>
+		<input type="month"/>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Select any Week
+            </td>
+            <td>
+		<input type="week"/>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Select any Color
+            </td>
+            <td>
+		<input type="color"/>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Select any Range
+            </td>
+            <td>
+		<input type="range"/>
+            </td>
+        </tr>
+		<tr>
+            <td>
+                Please Enter Your FeedBack
+            </td>
+            <td>
+		<textarea rows="5" cols="40"/></textarea>
+            </td>
+        </tr>
+		<tr>
+            <td>
+		</td>
+
+		<td>
+		<input type="button" id="btnRegister" value="Register"/>
+		 </td>
+        </tr>
+    </table>
+	</form>
+</body>
+</html>

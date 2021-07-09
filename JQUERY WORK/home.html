@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+           /* $("tr").mouseover(function () {    
+                $(this).css("background-color","red");
+            });
+	$("tr").mouseout(function () {    
+                $(this).css("background-color","white");
+            }); */
+	/* $("table tr").mouseover(function () {    
+                $(this).css("background-color","red");
+            });
+	$("table tr").mouseout(function () {    
+                $(this).css("background-color","white");
+            }); */ 
+	/* $("div tr td").mouseover(function () {    
+                $(this).css("background-color","red");
+            });
+	$("div tr td").mouseout(function () {    
+                $(this).css("background-color","white");
+            }); */
+	/*$("table").mouseover(function () {    
+                $(this).css("background-color","red");
+            }); */
+		/* $("#ta tr").css("background-color","lightblue");
+		$("#ta").find("tr").css("background-color","lightblue"); */
+		$("#btnAddNewRow").click(function () {    
+                var name = $("#txtUserName").val();
+		var password = $("#txtUserPassword").val();
+	 $("#ta").append("<tr><td>" +name+ "</td><td>" +password+"</td></tr>");
+	$("#ta").find("tr:odd").css("background-color","lightblue");
+	$("#ta").find("tr:even").css("background-color","lightgreen");
+	$("#ta").find("tr:first").css("background-color","lightcoral");
+	$("#ta").find("tr:last").css("background-color","lightcoral");
+            });
+		});
+</script>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+    <h1>Jummma</h1>
+	<table width="100%">
+	<tr>
+	<td> Welcome to JQuery </td>
+	</tr>
+	</table>
+<div>
+<table style="width:50%">
+<tr>
+<th>Electronics
+</th>
+<th>Electrical
+</th>
+</tr>
+<tr>
+<td>Mittu</td>
+<td>Pittu</td>
+</tr>
+</div>
+</table>
+<table  width="100%" border="1" cellpadding="5">
+<tr>
+<td>USER NAME </td>
+<td><input type="text" id="txtUserName"/></td>
+<td>PASSWORD </td>
+<td><input type="password" id="txtUserPassword"/></td>
+<td><input type="button" id="btnAddNewRow" value="AddNewRow"/></td>
+</tr>
+</table>
+<table   id ="ta" width="100%" border="1" cellpadding="5">
+<tr>
+<th>USER NAME </th>
+<th>PASSWORD </th>
+</tr>
+</table>
+</body>
+</html>

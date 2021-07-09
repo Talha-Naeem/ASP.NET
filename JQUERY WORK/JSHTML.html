@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <script src="jquery-3.6.0.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $("#btnhide").click(function () {
+                $("#dvFirst").hide("slow",function(){
+                    $("#dvSecond").hide("slow");
+                    });
+                });
+               /* $("#dvFirst").hide("slow");
+               $("#dvSecond").hide("slow"); }); */
+            $("#btnshow").click(function () {
+                /* $("#dvFirst").show("slow");
+                 $("#dvSecond").show("slow");
+             }); */
+                /* $("#dvSecond").show("slow"); saray div aik sath show krnay kyliye */
+                $("#dvFirst").show("slow",function(){
+                    $("#dvSecond").show("slow");
+                });
+            });
+            $("#btnToggle").click(function () {
+                /* $("#dvFirst").toggle("slow");
+                $("#dvSecond").toggle("slow"); 
+            }); */
+                $("#dvFirst").toggle("slow",function(){
+                    $("#dvSecond").toggle("slow");
+                });
+            });
+            $("#btnFadeOut").click(function () {
+                $("#dvFirst").fadeOut("slow", function () {
+                    $("#dvSecond").fadeOut("slow", function () {
+                    });
+                });
+            });
+            $("#btnFadeIn").click(function () {
+                $("#dvFirst").fadeIn("slow", function () {
+                    $("#dvSecond").fadeIn("slow", function () {
+                    });
+                });
+            });
+            $("#btnFadeToggle").click(function () {
+                $("#dvFirst").fadeToggle("slow", function () {
+                    $("#dvSecond").fadeToggle("slow", function () {
+                    });
+                });
+            });
+            $("#btnchange").change(function () {
+                var value = $(this).val();
+                $("div").css("border-radius",value + "%");
+                value = value / 100.0;
+                $("div").fadeTo(slow,"value");
+            });
+            $("#btnSlideup").click(function () {
+                $("div").slideUp("slow");
+            });
+            $("#btnSlidedown").click(function () {
+                $("div").slideDown("slow");
+            });
+            $("#btnSlideToggle").click(function () {
+                $("div").slideToggle("slow");
+            });
+            $("#btndance").click(function () {
+                /* $("#dvFirst").hide("slow").show("slow");
+                 $("#dvSecond").hide("slow").show("slow"); 
+                 $("#div").hide("slow").show("slow");  */
+                $("div")
+                    .hide("slow")
+                    .show("slow")
+                    .fadeOut("slow")
+                    .fadeIn("slow")
+                    .slideUp("slow")
+                    .slideDown("slow")
+                    .fadeTo("slow", 0.5)
+                    .fadeTo("slow",1);
+            });
+        });
+    </script>
+</head>
+<body>
+        <input type="button" id="btnhide" value="Hide" />
+        <input type="button" id="btnshow" value="Show"/>
+        <input type="button" id="btnToggle" value="Toggle" />
+        <input type="button" id="btnFadeOut" value="Fade Out" />
+        <input type="button" id="btnFadeIn" value="Fade In" />
+        <input type="button" id="btnFadeToggle" value="Fade Toggle" />
+        <input type="range" id="btnchange" />
+        <input type="button" id="btndance" value="Dance" />
+        <input type="button" id="btnSlideup" value="Slide Up" />
+        <input type="button" id="btnSlidedown" value="Slide Down" />
+        <input type="button" id="btnSlideToggle" value="Slide Toggle" />
+         <input type="button" id="btnclose" value="Close" onclick="window.close()"/>
+    <div id="dvFirst" style="background-color:red;width:100%;height:400px;">
+    </div>
+    <div id="dvSecond" style="background-color:blue;width:100%;height:400px;">
+    </div>
+</body>
+</html>
